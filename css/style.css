@@ -1,0 +1,442 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Define Color Variables */
+:root {
+    --asecna-blue: #0B4F6C; /* Deep blue */
+    --asecna-sky-blue: #219EBC; /* Lighter sky blue */
+    --asecna-light-blue: #8ECAE6; /* Very light blue */
+    --asecna-yellow: #FFB703; /* Airport yellow / Gold */
+    --asecna-gold-light: #FFD700; /* Lighter gold for gradient */
+    --asecna-grey: #6c757d; /* Standard grey */
+    --asecna-light-grey: #f8f9fa; /* Light background grey */
+    --asecna-white: #ffffff;
+    --asecna-dark: #343a40;
+    --asecna-dark-rgb: 52, 58, 64; /* RGB for toggler (if needed for light bg) */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--asecna-dark);
+    /* Adjust padding if navbar height changes, measure final height */
+    padding-top: 70px; /* REVIEW THIS VALUE BASED ON FINAL NAVBAR HEIGHT */
+    background-color: var(--asecna-white); /* Default background */
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand span, .hero-headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; /* Ensure Oswald boldness */
+}
+
+/* Typography Enhancement */
+.section-title {
+    font-weight: 700;
+    color: var(--asecna-blue);
+    margin-bottom: 1.5rem; /* Slightly more space below title */
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-size: 2.25rem; /* Slightly larger section titles */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px; /* Slightly wider underline */
+    height: 4px; /* Slightly thicker underline */
+    background-color: var(--asecna-yellow);
+    margin: 0.75rem auto 0; /* Adjust spacing */
+}
+.text-start .section-title::after,
+.text-left .section-title::after {
+     margin: 0.75rem 0 0; /* Adjust spacing */
+}
+
+p {
+    line-height: 1.7; /* Improve paragraph readability */
+}
+
+/* === Navbar Styles (Blue Background) === */
+.navbar-custom {
+    background-color: var(--asecna-blue);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+.navbar-custom .navbar-brand img {
+    max-height: 40px;
+}
+.navbar-custom .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    margin: 0 0.5rem;
+    padding-left: 30px !important;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+.navbar-custom .nav-link::before {
+    content: '';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-size: 0.9em;
+}
+.navbar-custom .nav-link:not(.active):hover {
+    color: var(--asecna-white);
+}
+.navbar-custom .nav-link:not(.active):hover::before {
+    content: '\f072'; /* Plane */
+    color: var(--asecna-yellow);
+    opacity: 1;
+}
+.navbar-custom .nav-link.active {
+    color: var(--asecna-white);
+    font-weight: 700;
+}
+.navbar-custom .nav-link.active::before {
+    content: '\f276'; /* Pin */
+    color: var(--asecna-yellow);
+    opacity: 1;
+}
+.navbar-custom .dropdown-toggle::after {
+    margin-left: 0.4em;
+    color: rgba(255, 255, 255, 0.85);
+}
+.navbar-custom #languageSelector {
+    color: rgba(255, 255, 255, 0.85);
+}
+.navbar-custom #languageSelector:hover {
+    color: var(--asecna-white);
+}
+.navbar-custom .dropdown-menu {
+    background-color: var(--asecna-white);
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.navbar-custom .dropdown-item {
+    color: var(--asecna-dark);
+}
+.navbar-custom .dropdown-item:hover {
+    background-color: var(--asecna-light-grey);
+    color: var(--asecna-blue);
+}
+/* === End Navbar Styles === */
+
+
+/* === Section Background Enhancements === */
+
+/* Subtle Gradient for Intro Section */
+.bg-intro-gradient {
+    background-image: linear-gradient(to bottom, var(--asecna-white) 0%, var(--asecna-light-grey) 100%);
+}
+
+/* Member States Section Background */
+.bg-member-states {
+    background-color: var(--asecna-sky-blue); /* Use the lighter sky blue */
+}
+
+/* Ensure text contrast within the Member States section */
+.bg-member-states p,
+.bg-member-states li {
+    color: var(--asecna-dark); /* Default dark text should be readable */
+}
+
+/* Adjust Section Title color within the Member States section for contrast */
+.bg-member-states .section-title {
+    color: var(--asecna-blue); /* Use the darker blue for the title */
+}
+/* Ensure the title's underline also has good contrast */
+.bg-member-states .section-title::after {
+     background-color: var(--asecna-blue); /* Match title color */
+}
+
+/* Ensure map placeholder text is visible */
+.bg-member-states .map-placeholder .text-muted {
+    color: var(--asecna-grey) !important; /* Ensure placeholder text is visible */
+}
+
+/* === End Section Background Enhancements === */
+
+
+/* Hero Section */
+#heroCarousel .carousel-item {
+    height: 75vh;
+    min-height: 450px;
+}
+
+#heroCarousel .hero-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.6); /* Keep contrast for caption */
+}
+
+#heroCarousel .carousel-caption {
+    bottom: 15%;
+    background: rgba(0, 0, 0, 0.3); /* Keep for readability */
+    padding: 25px; /* Slightly more padding */
+    border-radius: 8px; /* Slightly more rounded */
+}
+
+/* --- HERO HEADLINE TEXT GRADIENT --- */
+.hero-headline {
+    font-size: 3rem; /* Slightly larger */
+    font-weight: 700;
+    text-shadow: none; /* Remove text shadow if using gradient */
+    margin-bottom: 1rem;
+    /* Gradient Text */
+    background: linear-gradient(45deg, var(--asecna-light-blue), var(--asecna-white)); /* Recommended Option 1 */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text;
+    color: transparent; /* Make original text color transparent */
+}
+
+.hero-subheadline {
+    font-size: 1.3rem; /* Slightly larger */
+    margin-bottom: 1.5rem;
+    color: var(--asecna-white); /* Ensure clear white for subheadline */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Keep shadow for readability */
+}
+
+
+/* Buttons */
+.btn-asecna-yellow {
+    background-color: var(--asecna-yellow);
+    border-color: var(--asecna-yellow);
+    color: var(--asecna-dark);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-asecna-yellow:hover {
+    background-color: #e6a302;
+    border-color: #e6a302;
+    color: var(--asecna-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-asecna-blue {
+    background-color: var(--asecna-blue);
+    border-color: var(--asecna-blue);
+    color: var(--asecna-white);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-asecna-blue:hover {
+    background-color: #083c52;
+    border-color: #083c52;
+    color: var(--asecna-white);
+     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-outline-asecna-blue {
+    color: var(--asecna-blue);
+    border-color: var(--asecna-blue);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-outline-asecna-blue:hover {
+     background-color: var(--asecna-blue);
+     color: var(--asecna-white);
+}
+
+/* Utility Text Color */
+.asecna-blue-text {
+    color: var(--asecna-blue);
+}
+
+/* Service Cards */
+.service-card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.service-icon i {
+    transition: transform 0.3s ease;
+}
+.service-card:hover .service-icon i {
+    transform: scale(1.1);
+}
+
+/* Member States Section - Background defined above */
+.map-placeholder {
+    min-height: 300px;
+    width: 100%;
+    background-color: var(--asecna-light-grey);
+    border: 1px dashed var(--asecna-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+     border-radius: 8px;
+}
+.map-placeholder img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Updates Section Cards */
+#updates .card {
+     border: none;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+     border-radius: 8px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#updates .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+#updates .card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover;
+    height: 200px; /* Fixed height for consistency */
+}
+
+/* Final CTA Section */
+.bg-asecna-blue {
+     background-color: var(--asecna-blue);
+}
+#final-cta h2 {
+    font-size: 2.5rem; /* Larger CTA headline */
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--asecna-dark);
+    color: var(--asecna-light-grey);
+    border-top: 3px solid var(--asecna-yellow); /* Add subtle top border */
+}
+.footer-heading {
+    font-family: 'Oswald', sans-serif;
+    color: var(--asecna-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+.footer-links a {
+    color: var(--asecna-light-grey);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--asecna-yellow);
+    padding-left: 5px;
+}
+.footer-section p {
+    color: var(--asecna-light-grey);
+    font-size: 0.9rem;
+}
+.footer-section .mb-0 { /* Footer contact items */
+ font-size: 0.9rem;
+ margin-bottom: 0.3rem !important;
+}
+.footer-section .mb-0 i {
+    color: var(--asecna-yellow);
+    width: 20px;
+    text-align: center;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--asecna-white);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+    background-color: var(--asecna-yellow);
+    color: var(--asecna-dark);
+}
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.copyright {
+    font-size: 0.85rem;
+    color: var(--asecna-grey);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    
+    .navbar-custom .nav-link {
+        padding: 0.8rem 1rem; /* Adjust padding for vertical layout */
+        padding-left: 40px !important; /* Ensure icon space */
+        margin: 0;
+        /* Optional: Add subtle separator for vertical items */
+        /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+    }
+     .navbar-custom .nav-link::before {
+        left: 15px; /* Adjust icon position */
+     }
+     /* Adjust mobile dropdown menu */
+     .navbar-custom .dropdown-menu {
+        box-shadow: none;
+        border: none;
+        /* Keep light background for readability */
+        background-color: var(--asecna-white);
+        padding: 0.5rem 0;
+     }
+     .navbar-custom .dropdown-item {
+         padding-left: 40px !important; /* Align dropdown items */
+         color: var(--asecna-dark); /* Dark text on light dropdown */
+     }
+      .navbar-custom .dropdown-item:hover {
+         background-color: var(--asecna-light-grey); /* Light hover */
+         color: var(--asecna-blue);
+     }
+}
+
+@media (max-width: 767.98px) {
+    .hero-headline {
+        font-size: 2.2rem; /* Adjust for smaller screens */
+        /* Gradient text might be less readable on small screens, consider fallback */
+        /* color: var(--asecna-white); */ /* Optional fallback */
+        /* background: none; */
+    }
+    .hero-subheadline {
+        font-size: 1.1rem;
+    }
+     #heroCarousel .carousel-caption {
+        bottom: 5%;
+        padding: 15px;
+        max-width: 90%; /* Prevent text hitting edges */
+    }
+    .section-title {
+        font-size: 1.8rem; /* Adjust section titles */
+    }
+    .footer-heading {
+         margin-top: 1.5rem;
+     }
+      .footer-section .col-lg-4.col-md-6 { /* Social media column */
+        margin-top: 1.5rem;
+    }
+    .footer-section .text-center.copyright { /* Ensure copyright is readable */
+        padding-top: 1rem;
+    }
+}

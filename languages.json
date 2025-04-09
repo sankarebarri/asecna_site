@@ -1,0 +1,43 @@
+{
+    "en": {
+      "nav": {
+        "home": "Home",
+        "about": "About ASECNA",
+        "director": "General Director's Words",
+        "services": "Services",
+        "memberStates": "Member States",
+        "careers": "Careers",
+        "publications": "Publications",
+        "contact": "Contact"
+      },
+      "hero": {
+        "title": "Ensuring Safe Skies Across 19 Countries",
+        "subtitle": "Welcome to ASECNA's official prototype website."
+      },
+      "footer": {
+        "rights": "All rights reserved.",
+        "contact": "Contact us: info@asecna.org"
+      }
+    },
+    "fr": {
+      "nav": {
+        "home": "Accueil",
+        "about": "À propos d'ASECNA",
+        "director": "Discours du Directeur Général",
+        "services": "Services",
+        "memberStates": "États Membres",
+        "careers": "Carrières",
+        "publications": "Publications",
+        "contact": "Contact"
+      },
+      "hero": {
+        "title": "Assurer des cieux sûrs à travers 19 pays",
+        "subtitle": "Bienvenue sur le site prototype officiel d'ASECNA."
+      },
+      "footer": {
+        "rights": "Tous droits réservés.",
+        "contact": "Contactez-nous: info@asecna.org"
+      }
+    }
+  }
+  
